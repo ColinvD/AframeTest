@@ -13,22 +13,3 @@ function AddModel(modelLocation, materialLocation) {
   scene.appendChild(model.model);
   return model;
 }
-
-/*var car = document.createElement('a-obj-model');
-car.setAttribute('src', 'Models/Car/Shelby.obj');
-car.setAttribute('mtl', 'Models/Car/Shelby.mtl');
-scene.appendChild(car);*/
-
-//var assets = document.querySelector('a-assets');
-/*var carObj = document.createElement('a-asset-item');
-carObj.id = 'CarObj';
-carObj.src= "/Models/Car/Shelby.obj";
-var carMat = document.createElement('a-asset-item');
-carMat.id = 'CarMat';
-carMat.src= "/Models/Car/Shelby.mtl";*/
-//var car = document.createElement('a-entity');
-//car.components["obj-model"] = "obj: #carObj; mtl: #carMat";
-
-//assets.appendChild(carObj);
-//assets.appendChild(carMat);
-//scene.appendChild(car);
