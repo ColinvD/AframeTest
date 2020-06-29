@@ -3,54 +3,88 @@ class Model {
     this.model = document.createElement('a-obj-model');
     this.model.setAttribute('src', modelLocation);
     this.model.setAttribute('mtl', materialLocation);
+
+    const self = this;
+
+    this.position = {
+      set x(newX){
+        self.model.setAttribute('position', 'x', newX);
+      },
+      set y(newY){
+        self.model.setAttribute('position', 'y', newY);
+      },
+      set z(newZ){
+        self.model.setAttribute('position', 'z', newZ);
+      },
+
+      get x(){
+        return self.model.getAttribute('position').x;
+      },
+      get y(){
+        return self.model.getAttribute('position').y;
+      },
+      get z(){
+        return self.model.getAttribute('position').z;
+      }
+    };
+
+    this.rotation = {
+      set x(newX){
+        self.model.setAttribute('rotation', 'x', newX);
+      },
+      set y(newY){
+        self.model.setAttribute('rotation', 'y', newY);
+      },
+      set z(newZ){
+        self.model.setAttribute('rotation', 'z', newZ);
+      },
+
+      get x(){
+        return self.model.getAttribute('rotation').x;
+      },
+      get y(){
+        return self.model.getAttribute('rotation').y;
+      },
+      get z(){
+        return self.model.getAttribute('rotation').z;
+      }
+    };
+
+    this.scale = {
+      set x(newX){
+        self.model.setAttribute('scale', 'x', newX);
+      },
+      set y(newY){
+        self.model.setAttribute('scale', 'y', newY);
+      },
+      set z(newZ){
+        self.model.setAttribute('scale', 'z', newZ);
+      },
+
+      get x(){
+        return self.model.getAttribute('scale').x;
+      },
+      get y(){
+        return self.model.getAttribute('scale').y;
+      },
+      get z(){
+        return self.model.getAttribute('scale').z;
+      }
+    };
   }
 
   //Position functions
-  setPosX(newX){
-    this.model.setAttribute('position', 'x', newX);
-  }
-
-  setPosY(newY){
-    this.model.setAttribute('position', 'y', newY);
-  }
-
-  setPosZ(newZ){
-    this.model.setAttribute('position', 'z', newZ);
-  }
 
   setPos(newX, newY, newZ){
     this.model.setAttribute('position', {x: newX, y: newY, z: newZ});
   }
 
-  //Rotation functions
-  setRotX(newX){
-    this.model.setAttribute('rotation', 'x', newX);
-  }
-
-  setRotY(newY){
-    this.model.setAttribute('rotation', 'y', newY);
-  }
-
-  setRotZ(newZ){
-    this.model.setAttribute('rotation', 'z', newZ);
-  }
-
+  //Rotation function
   setRot(newX, newY, newZ){
     this.model.setAttribute('rotation', {x: newX, y: newY, z: newZ});
   }
 
   //Scale functions
-  setScaleX(newX){
-    this.model.setAttribute('scale', 'x', newX);
-  }
-
-  setScaleY(newY){
-    this.model.setAttribute('scale', 'y', newY);
-  }
-
-  setScaleZ(newZ){
-    this.model.setAttribute('scale', 'z', newZ);
-  }
 
   setScale(newX, newY, newZ){
     this.model.setAttribute('scale', {x: newX, y: newY, z: newZ});
@@ -58,5 +92,14 @@ class Model {
 
   setScale(newScale){
     this.model.setAttribute('scale', {x: newScale, y: newScale, z: newScale});
+  }
+
+  //Event listeners
+  addEventListener(listenTo, event){
+    this.model.addEventListener(listenTo, event);
+  }
+
+  removeEventListener(listenTo, event){
+    this.model.removeEventListener(listenTo, event);
   }
 }
