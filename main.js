@@ -7,6 +7,8 @@ box.setAttribute('material', 'color', '#4CC3D9');
 scene.appendChild(box);
 
 var car = AddModel('Models/Car/Shelby.obj','Models/Car/Shelby.mtl');
+car.setPos(1.5, 0.5, -1);
+car.setScale(0.4);
 
 function AddModel(modelLocation, materialLocation) {
   var model = new Model(modelLocation, materialLocation);
