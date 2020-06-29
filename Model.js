@@ -3,6 +3,21 @@ class Model {
     this.model = document.createElement('a-obj-model');
     this.model.setAttribute('src', modelLocation);
     this.model.setAttribute('mtl', materialLocation);
+
+    this.model.addEventListener('mouseenter', function () {
+      console.log("Hello!!!!");
+      //this.model.setAttribute('visible', false);
+    });
+
+    this.model.addEventListener('mouseleave', function () {
+      console.log("BYE!!!!!");
+      //this.model.setAttribute('visible', true);
+    });
+
+    this.model.addEventListener('click', function () {
+      console.log("HEY STOP THAT!!!!!");
+      //this.model.setAttribute('visible', true);
+    });
   }
 
   //Position functions
