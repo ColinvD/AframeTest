@@ -10,6 +10,26 @@ var car = AddModel('Models/Car/Shelby.obj','Models/Car/Shelby.mtl');
 car.setPos(1.5, 0.5, -1);
 car.setScale(0.4);
 
+car.addEventListener('mouseenter', () => {
+  console.log("Hello!!!!");
+  car.rotation.y = 45;
+});
+
+car.addEventListener('mouseenter', Hello);
+
+car.addEventListener('mouseleave', () => {
+  console.log("BYE!!!!!");
+  car.rotation.y = 0;
+});
+
+car.addEventListener('click', () => {
+  car.removeEventListener('mouseenter', Hello);
+});
+
+function Hello() {
+  console.log("Well hello there");
+}
+
 function AddModel(modelLocation, materialLocation) {
   var model = new Model(modelLocation, materialLocation);
   scene.appendChild(model.model);

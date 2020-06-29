@@ -71,21 +71,6 @@ class Model {
         return self.model.getAttribute('scale').z;
       }
     };
-
-    /*this.model.addEventListener('mouseenter', function () {
-      console.log("Hello!!!!");
-      //this.model.setAttribute('visible', false);
-    });
-
-    this.model.addEventListener('mouseleave', function () {
-      console.log("BYE!!!!!");
-      //this.model.setAttribute('visible', true);
-    });
-
-    this.model.addEventListener('click', function () {
-      console.log("HEY STOP THAT!!!!!");
-      //this.model.setAttribute('visible', true);
-    });*/
   }
 
   //Position functions
@@ -107,5 +92,14 @@ class Model {
 
   setScale(newScale){
     this.model.setAttribute('scale', {x: newScale, y: newScale, z: newScale});
+  }
+
+  //Event listeners
+  addEventListener(listenTo, event){
+    this.model.addEventListener(listenTo, event);
+  }
+
+  removeEventListener(listenTo, event){
+    this.model.removeEventListener(listenTo, event);
   }
 }
